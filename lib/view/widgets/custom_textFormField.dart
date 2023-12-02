@@ -7,12 +7,13 @@ class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final FormFieldSetter? onSaved;
   final FormFieldValidator? validator;
+ final bool obscureText ;
   CustomTextFormField(
       {super.key,
       this.text = "",
       this.hintText = "",
       this.onSaved,
-      this.validator});
+      this.validator,this.obscureText=false});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class CustomTextFormField extends StatelessWidget {
             color: Colors.grey.shade900,
           ),
           TextFormField(
+            obscureText: obscureText,
             onSaved: onSaved,
             validator: validator,
             decoration: InputDecoration(

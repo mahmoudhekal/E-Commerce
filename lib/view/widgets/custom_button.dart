@@ -7,15 +7,18 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Color color;
   final VoidCallback onPressed;
-   CustomButton({super.key,this.text="",this.color=Colors.black,required this.onPressed});
-    
+  CustomButton(
+      {super.key,
+      this.text = "",
+      this.color = Colors.black,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      padding: const EdgeInsets.all(18),
+      padding: EdgeInsets.all(MediaQuery.of(context).size.height * .01),
       color: AppColor.primaryColor,
       child: CustomText(
         text: text,
